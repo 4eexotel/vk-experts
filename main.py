@@ -57,9 +57,8 @@ class Main:
         print(f"✅ ID успешно определён. ({category_id})\n")
 
     def start_bot(self):
-        _type = input("⚙️ Бот успешно готов к запуску.\nВыберите один из режимов работы (1 - фарм, 2 - умное оценивание):")
-        if _type not in ["1", "2"]:
-            exit("⛔️ Запуск бота отменён.")
+        _type = 1
+       
 
         start_from = ""
         while True:
@@ -84,7 +83,7 @@ class Main:
                     except ApiError:
                         print(
                             f"⛔️ Не удалось оценить запись wall{item['source_id']}_{item['post_id']}.\n\n⚙️ Делаю перерыв...\n")
-                        time.sleep(random.randint(300, 600))
+                        time.sleep(random.randint(300, 900))
 
                     time.sleep(random.randint(int(config.sleep_time / 3), int(config.sleep_time)))
                     continue
@@ -149,7 +148,7 @@ class Main:
                 except ApiError:
                     print(
                         f"⛔️ Не удалось оценить запись wall{item['source_id']}_{item['post_id']}. ({rate})\n\n⚙️ Делаю перерыв...\n")
-                    time.sleep(random.randint(300, 600))
+                    time.sleep(random.randint(300, 900))
 
                 time.sleep(random.randint(int(config.sleep_time/3), int(config.sleep_time)))
 
