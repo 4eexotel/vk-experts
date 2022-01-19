@@ -8,6 +8,7 @@ from vk_api import VkApi, ApiError
 class Main:
     vk_session: VkApi
     category_id: str
+    print(access_token)
 
     def __init__(self):
         self.vk_session = VkApi(token=str(config.access_token))
