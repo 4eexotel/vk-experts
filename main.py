@@ -57,8 +57,9 @@ class Main:
         print(f"✅ ID успешно определён. ({category_id})\n")
 
     def start_bot(self):
-        _type = 1
-       
+        _type = "1"
+        if _type not in ["1", "2"]:
+            exit("⛔️ Запуск бота отменён.")
 
         start_from = ""
         while True:
