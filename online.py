@@ -1,4 +1,4 @@
-import vk
+import vk_api
 import time
 
 token = os.environ['TOKEN_VK']
