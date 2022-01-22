@@ -1,11 +1,12 @@
 import vk_api
-import time
 import os
-
-token = os.environ['TOKEN_VK']
-
-session = vk.Session(access_token = token)
-api = vk.API(session, v = "5.95")
+import time
 while True:
-    exit = api.account.setOnline(voip = 0)
-    time.sleep(180)
+	try:
+		vk = vk_api.VkApi(token=os.environ["TOKEN_VK"])
+		vk.method("account.setOnline")
+		time.sleep(300)
+	except Exception as e:
+		#logging.error(str(datetime.now()) + " " +str(e))
+		time.sleep(30)
+ 
