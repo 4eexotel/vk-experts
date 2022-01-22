@@ -1,1 +1,1 @@
-worker: python main.py & python online.py
+worker: python online.py
